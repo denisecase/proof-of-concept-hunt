@@ -26,9 +26,7 @@ export default function getLocation() {
       console.log('success position ' + position)
       if (position === undefined) { return ' position is undefined'; }
       const crd = position.coords
-      console.log(crd)
       locations.forEach((location, index, array) => {
-        console.log(location.Name)
         if (inside(crd, location)) {
           document.querySelector('#locationAnswer').innerHTML = location.Name;
         }
@@ -51,7 +49,7 @@ const locations = [
     "North": 40.344208,
     "West": -94.891494,
     "South": 40.343652,
-    "East": -94.890432,
+    "East": -94.888400,
     "Notes": "circle",
     "Attachments": "",
     "Quest-Location": "Faustiana-Faustiana One"
@@ -61,7 +59,7 @@ const locations = [
     "North": 40.343579,
     "West": -94.89084,
     "South": 40.343268,
-    "East": -94.890357,
+    "East": -94.888400,
     "Notes": "heading south",
     "Attachments": "",
     "Quest-Location": "Faustiana-Faustiana Two"
@@ -71,7 +69,7 @@ const locations = [
     "North": 40.342947,
     "West": -94.8862633,
     "South": 40.34275,
-    "East": -94.890456,
+    "East": -94.888400,
     "Notes": "further south",
     "Attachments": "",
     "Quest-Location": "Faustiana-Faustiana Three"
@@ -81,7 +79,7 @@ const locations = [
     "North": 40.342533,
     "West": -94.890749,
     "South": 40.341902,
-    "East": -94.890447,
+    "East": -94.888400,
     "Notes": "watertower",
     "Attachments": "",
     "Quest-Location": "Faustiana-Faustiana Four"
