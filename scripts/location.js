@@ -39,6 +39,10 @@ export default function getLocation() {
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
+        document.querySelector('#device-lat').innerHTML = '';
+        document.querySelector('#device-long').innerHTML = '';
+        document.querySelector('#locationAnswer').innerHTML = '?';
+
         if (position === undefined) {
           document.querySelector('#error-message').innerHTML =
             'Browser cannot determine device position (position is undefined).';
@@ -46,7 +50,6 @@ export default function getLocation() {
         const device = position.coords;
         document.querySelector('#device-lat').innerHTML = device.latitude;
         document.querySelector('#device-long').innerHTML = device.longitude;
-        document.querySelector('#locationAnswer').innerHTML = '?';
         const arrayLength = locationsArray.length;
         for (let i = 0; i < arrayLength; i += 1) {
           const thisLoc = locationsArray[i];
@@ -55,7 +58,7 @@ export default function getLocation() {
             document.querySelector('#locationAnswer').innerHTML = name;
             const utterance = new SpeechSynthesisUtterance();
             utterance.text = `Congratulations! You found location ${name}`;
-            window.speechSynthesis.speak(utterance);
+            //window.speechSynthesis.speak(utterance);
             break;
           }
         }
