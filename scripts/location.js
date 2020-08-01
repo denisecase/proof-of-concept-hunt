@@ -43,12 +43,14 @@ export default function getLocation() {
           document.querySelector('#error-message').innerHTML =
             'Browser cannot determine device position (position is undefined).';
         }
-        const deviceCoords = position.coords;
+        const device = position.coords;
+        document.querySelector('#device-lat').innerHTML = device.latitude;
+        document.querySelector('#device-long').innerHTML = device.longitude;
         document.querySelector('#locationAnswer').innerHTML = '?';
         const arrayLength = locationsArray.length;
         for (let i = 0; i < arrayLength; i += 1) {
           const thisLoc = locationsArray[i];
-          if (inside(deviceCoords, thisLoc)) {
+          if (inside(device, thisLoc)) {
             const name = thisLoc.Name;
             document.querySelector('#locationAnswer').innerHTML = name;
             const utterance = new SpeechSynthesisUtterance();
