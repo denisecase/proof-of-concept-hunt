@@ -7,7 +7,6 @@ main {
   height: 100vh;
   display: flex;
   flex-direction: column;
-
 }
 
 article {
@@ -25,4 +24,3 @@ article > div {
 #error-message {
   color: red;
 }
-

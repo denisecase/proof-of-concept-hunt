@@ -1,98 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta name="author" content="Denise Case" />
+    <meta name="description" content="Proof of concept for a location app" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="x-ua-compatible" content="IE=edge" />
-  <meta name="author" content="Denise Case" />
-  <meta name="description" content="Proof of concept for a location app" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hunt PoC</title>
 
-  <title>Hunt PoC</title>
+    <!-- Get current Pure CSS from https://purecss.io/start/ -->
 
-  <!-- Get current Pure CSS from https://purecss.io/start/ -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"
+      integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47"
+      crossorigin="anonymous"
+    />
 
-  <link rel="stylesheet"
-    href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"
-    integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47"
-    crossorigin="anonymous" />
-
-  <!--[if lte IE 8]>
+    <!--[if lte IE 8]>
       <link
         rel="stylesheet"
         href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-old-ie-min.css"
       />
     <![endif]-->
-  <!--[if gt IE 8]><!-->
-  <link rel="stylesheet"
-    href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css" />
-  <!--<![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css"
+    />
+    <!--<![endif]-->
 
-  <!-- Custom styles -->
+    <!-- Custom styles -->
 
-  <link rel="stylesheet" href="./styles/tab.css" />
+    <link rel="stylesheet" href="./styles/tab.css" />
 
-  <!-- Icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144"
-    href="./images/icons/apple-touch-icon-144-precomposed.png" />
-  <link rel="shortcut icon" href="favicon.ico" />
-  <link rel="icon" href="favicon.ico" />
-  <link rel="apple-touch-icon" sizes="57x57"
-    href="./images/icons/apple-touch-icon-57x57.png" />
-  <link rel="apple-touch-icon" sizes="60x60"
-    href="./images/icons/apple-touch-icon-60x60.png" />
-  <link rel="apple-touch-icon" sizes="72x72"
-    href="./images/icons/apple-touch-icon-72x72.png" />
-  <link rel="apple-touch-icon" sizes="76x76"
-    href="./images/icons/apple-touch-icon-76x76.png" />
-  <link rel="apple-touch-icon" sizes="114x114"
-    href="./images/icons/apple-touch-icon-114x114.png" />
-  <link rel="apple-touch-icon" sizes="120x120"
-    href="./images/icons/apple-touch-icon-120x120.png" />
-  <link rel="apple-touch-icon" sizes="144x144"
-    href="./images/icons/apple-touch-icon-144x144.png" />
-  <link rel="apple-touch-icon" sizes="152x152"
-    href="./images/icons/apple-touch-icon-152x152.png" />
-  <link rel="apple-touch-icon" sizes="180x180"
-    href="./images/icons/apple-touch-icon-180x180.png" />
-  <link rel="icon" type="image/png"
-    href="./images/icons/android-chrome-48x48.png" sizes="48x48" />
-  <link rel="icon" type="image/png" href="./images/icons/favicon-32x32.png"
-    sizes="32x32" />
-  <link rel="icon" type="image/png"
-    href="./images/icons/android-chrome-192x192.png" sizes="192x192" />
-  <link rel="icon" type="image/png" href="./images/icons/favicon-96x96.png"
-    sizes="96x96" />
-  <link rel="icon" type="image/png" href="./images/icons/favicon-16x16.png"
-    sizes="16x16" />
-  <meta name="msapplication-TileColor" content="#da532c" />
-  <meta name="msapplication-TileImage"
-    content="./images/icons/mstile-144x144.png" />
-  <meta name="theme-color" content="#da532c" />
-</head>
+    <!-- Icons -->
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="144x144"
+      href="./images/icons/apple-touch-icon-144-precomposed.png"
+    />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" href="favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./images/icons/apple-touch-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./images/icons/apple-touch-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./images/icons/apple-touch-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./images/icons/apple-touch-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./images/icons/apple-touch-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./images/icons/apple-touch-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./images/icons/apple-touch-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./images/icons/apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/icons/apple-touch-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="./images/icons/android-chrome-48x48.png"
+      sizes="48x48"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="./images/icons/favicon-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="./images/icons/android-chrome-192x192.png"
+      sizes="192x192"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="./images/icons/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="./images/icons/favicon-16x16.png"
+      sizes="16x16"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta
+      name="msapplication-TileImage"
+      content="./images/icons/mstile-144x144.png"
+    />
+    <meta name="theme-color" content="#da532c" />
+  </head>
 
-<body class="bgimg" id="background">
-  <main>
-       
-    <article class=" caption">
+  <body class="bgimg" id="background">
+    <main>
+      <article class="caption">
+        <div id="clockbox"></div>
+        <div class="border" id="greeting">Hello!</div>
+        <br />
+        <div id="location">Welcome to <span id="locationAnswer">?</span></div>
+        <br />
 
-      <div id="clockbox"></div>
-      <div class="border" id="greeting">Hello!</div><br>
-      <div id="location">Welcome to <span id="locationAnswer">?</span></div>
-      <br>
+        <div id="smile">:)</div>
 
-      <div id="smile">:)</div>
+        <div id="error-message"></div>
+      </article>
+    </main>
+    <!-- paths are root-relative -->
 
-      <div id="error-message"></div>
-
-    </article>
-  </main>
-  <!-- paths are root-relative -->
-  <script type="module" src="./scripts/tab.js"></script>
-  <script type="module" src="./scripts/dateTime.js"></script>
-  <script type="module" src="./scripts/location.js"></script>
-  <script type="module" src="./scripts/jokes.js"></script>
-
-</body>
-
+    <script type="module" src="./scripts/tab.js"></script>
+    <script type="module" src="./scripts/dateTime.js"></script>
+    <script type="module" src="./scripts/location.js"></script>
+    <script type="module" src="./scripts/jokes.js"></script>
+  </body>
 </html>
