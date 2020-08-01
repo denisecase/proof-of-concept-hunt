@@ -10,15 +10,40 @@
 
 export default function getLocation() {
   if (!navigator.geolocation) {
-    console.log("Browser doesn't support geolocation.")
-    locationText = "? (browser doesn't support geolocation)"
-  } else {
-    console.log('Browser does support geolocation.')
-    navigator.geolocation.getCurrentPosition(success, error, options)
-    console.log('locationText=' + locationText)
-    return locationText
+    return "? (browser DOES NOT support geolocation)"
+  } else {  
+
+    // geolocation supported
+
+    const options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      position => {
+      console.log('success position ' + position)
+      if (position === undefined) { return ' position is undefined'; }
+      const crd = position.coords
+      console.log(crd)
+      locations.forEach((location, index, array) => {
+        console.log(location.Name)
+        if (inside(crd, location)) {
+          document.querySelector('#locationAnswer').innerHTML = location.Name;
+        }
+      })
+    }, 
+    err => {
+      const s = `ERROR(${err.code}): ${err.message}`
+      console.warn(s)
+      document.querySelector('#error-message').innerHTML = err.message;
+    }, options)
   }
 }
+
+
+
 
 const locations = [
   {
@@ -153,30 +178,7 @@ const locations = [
   }
 ]
 
-const options = {
-  enableHighAccuracy: true,
-  timeout: 5000,
-  maximumAge: 0
-}
 
-var locationText = '?'
-
-// success callback
-const success = pos => {
-  console.log('success pos ' + pos)
-  if (pos === undefined) return 'undefined';
-  const crd = pos.coords
-  locations.forEach((location, index, array) => {
-    if (inside(crd, location)) return location.Name;
-  })
-}
-
-// error callback
-const error = err => {
-  const s = `ERROR(${err.code}): ${err.message}`
-  console.warn(s)
-  document.querySelector('#error-message').innerHTML = err.message;
-}
 
 function inside(crd, bounds) {
   console.log('CHECKING inside ' + bounds.Name)

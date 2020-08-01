@@ -14,7 +14,6 @@ window.addEventListener('load', main);
  */
 function main() {
 
-  console.log('Starting main');
   // assign display elements .............................................
 
   const weekElement = document.getElementById('week')
