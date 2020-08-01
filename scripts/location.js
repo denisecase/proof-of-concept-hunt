@@ -58,7 +58,7 @@ export default function getLocation() {
             document.querySelector('#locationAnswer').innerHTML = name;
             const utterance = new SpeechSynthesisUtterance();
             utterance.text = `Congratulations! You found location ${name}`;
-            //window.speechSynthesis.speak(utterance);
+            window.speechSynthesis.speak(utterance);
             break;
           }
         }
