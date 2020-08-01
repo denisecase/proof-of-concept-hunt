@@ -29,8 +29,10 @@ export default function getLocation() {
       locations.forEach((location, index, array) => {
         if (inside(crd, location)) {
           document.querySelector('#locationAnswer').innerHTML = location.Name;
+          return;
         }
       })
+      document.querySelector('#locationAnswer').innerHTML = '?';
     }, 
     err => {
       const s = `ERROR(${err.code}): ${err.message}`
