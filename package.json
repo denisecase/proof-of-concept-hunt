@@ -1,0 +1,59 @@
+{
+  "name": "proof-of-concept-hunt",
+  "version": "1.0.0",
+  "description": "Proof of concept for a possible hunt app",
+  "keywords": [
+    "location",
+    "gps",
+    "geofencing",
+    "html",
+    "css",
+    "javascript",
+    "pwa"
+  ],
+  "homepage": "https://github.com/denisecase/proof-of-concept-hunt#readme",
+  "bugs": {
+    "url": "https://github.com/denisecase/proof-of-concept-hunt/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denisecase/proof-of-concept-hunt.git"
+  },
+  "license": "MIT",
+  "author": "Denise Case",
+  "main": "index.html",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint-fix": "eslint --fix .",
+    "prettier": "prettier --write .",
+    "sort": "npx npx sort-package-json",
+    "test": "npx lighthouse-badges --urls https://denisecase.github.io/44-691-gdp1-syllabus/ -o test_results"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && npm run sort && npm run lint-fix",
+      "pre-push": "echo not running tests"
+    }
+  },
+  "dependencies": {
+    "axios": "latest",
+    "globals": "latest"
+  },
+  "devDependencies": {
+    "eslint": "latest",
+    "eslint-config-airbnb-base": "latest",
+    "eslint-config-prettier": "latest",
+    "eslint-plugin-import": "latest",
+    "eslint-plugin-prettier": "latest",
+    "eslint-plugin-scanjs-rules": "latest",
+    "eslint-plugin-xss": "latest",
+    "husky": "latest",
+    "prettier": "latest",
+    "pretty-quick": "latest",
+    "remark-lint": "latest",
+    "sort-package-json": "latest"
+  }
+}

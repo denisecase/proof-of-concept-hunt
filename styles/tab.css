@@ -1,0 +1,28 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #006747;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+}
+
+article {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 5vh;
+}
+article > div {
+  margin: 0.5em;
+}
+#clockbox {
+  font-size: 3rem;
+  color: #006747;
+}
+#error-message {
+  color: red;
+}
+
