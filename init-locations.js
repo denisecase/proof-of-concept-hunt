@@ -131,4 +131,14 @@ export default [
     Attachments: '',
     'Quest-Location': 'Super Quest-Super Quest One',
   },
+  {
+    Name: 'Super Quest Two',
+    North: 40.352834,
+    West: -94.674814,
+    South: 40.351630,
+    East: -94.671554,
+    Notes: '',
+    Attachments: '',
+    'Quest-Location': 'Super Quest-Super Quest Two',
+  },
 ];
