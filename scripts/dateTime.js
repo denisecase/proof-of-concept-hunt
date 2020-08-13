@@ -81,5 +81,5 @@ export function getGreeting(numHour) {
   } else if (numHour < 17) {
     t = 'Good afternoon';
   }
-  return `${t}, Professor`;
+  return `${t}, Player`;
 }
