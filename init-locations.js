@@ -181,5 +181,16 @@ export default [
     Attachments: '',
     'Quest-Location': 'Colden Pond-Colden Pond Four, Excellent Smithers',
   },
+    {
+    Name: 'Badami Office, Excellent Smithers',
+    North: 40.351081,
+    West: -94.883165,
+    South: 40.350936,
+    East: -94.883009,
+    Notes: '',
+    Attachments: '',
+    'Quest-Location': 'Badami Office-Badami Office, Excellent Smithers',
+  },
+
 
 ];
